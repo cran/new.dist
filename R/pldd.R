@@ -1,4 +1,4 @@
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @name pldd
 #' @param x,q vector of quantiles.
@@ -8,16 +8,16 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' a Power Log Dagum distribution parameters.
+#' a Power Log Dagum distribution.
 #' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution
 #' function, \code{qpldd} gives the quantile function and \code{rpldd} generates
 #'  random deviates.
 #' @details
-#' A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta},
-#' \eqn{\theta}, has density given by
+#' A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta} and
+#' \eqn{\theta}, has density
 #'  \deqn{f\left( x\right) =\alpha
 #'  \left( \beta +\theta \left\vert x\right\vert^{\beta -1}
 #'  \right) e^{-\left( \beta x+sign\left( x\right)
@@ -27,7 +27,7 @@
 #'    \left\vert x\right\vert ^{\beta }\right) }
 #'    \right) ^{-\left( \alpha +1\right)},}
 #' where
-#' \deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0,~\theta \geq 0}
+#' \deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0~and~\theta \geq 0}
 #' @note
 #' The distributions hazard function
 #' \deqn{h\left( x\right) =\frac{\alpha
@@ -65,7 +65,7 @@ dpldd<-function(x,alpha,beta,theta,log=FALSE)
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
   }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples
@@ -89,7 +89,7 @@ ppldd<-function(q,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
     if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
 }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples
@@ -124,7 +124,7 @@ qpldd<-function(p,alpha,beta,theta,lower.tail=TRUE)
     })
     return(kok)
   }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples

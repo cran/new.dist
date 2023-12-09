@@ -1,4 +1,4 @@
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @name tpmd
 #' @param x,q vector of quantiles.
@@ -9,7 +9,7 @@
 #' @param alpha a shape parameter.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
 #' the Power Muth distribution with parameters \code{shape} and \code{scale}.
@@ -17,8 +17,8 @@
 #' function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates
 #'  random deviates.
 #' @details
-#' The Power Muth Distribution with \code{shape} parameter \eqn{\alpha} and
-#' \code{scale} parameter \eqn{\beta} has density given by
+#' The Power Muth distribution with \code{shape} parameter \eqn{\alpha} and
+#' \code{scale} parameter \eqn{\beta} has density
 #' \deqn{f\left( x\right) =\frac{\alpha }{\beta ^\alpha }x^{\alpha -1}
 #' \left( e^{\left(x/\beta \right) ^{\alpha }}-1\right)
 #' \left( e^{\left( x/\beta \right)  ^{\alpha }-
@@ -57,7 +57,7 @@ dtpmd<-function(x,beta=1,alpha,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples
@@ -80,7 +80,7 @@ ptpmd<-function(q,beta=1,alpha,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples
@@ -109,7 +109,7 @@ qtpmd<-function(p,beta=1,alpha,lower.tail=TRUE)
     return(quant)
   }
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples

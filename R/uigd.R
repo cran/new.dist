@@ -1,5 +1,4 @@
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @name uigd
 #' @param x,q vector of quantiles.
@@ -10,18 +9,17 @@
 #' @param lambda a scale parameter.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' the unit inverse Gaussian distribution A new alternative to two parameter
-#' distribution with parameters \code{mean} and \code{scale}.
+#' the Unit Inverse Gaussian distribution \code{mean} and \code{scale}.
 #' @return \code{duigd} gives the density, \code{puigd} gives the distribution
 #' function, \code{quigd} gives the quantile function and \code{ruigd} generates
 #'  random deviates.
 #' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distribution with \code{scale} parameter \eqn{\lambda} and \code{mean}
-#' parameter \eqn{\mu}, has density given by
+#' The Unit Inverse Gaussian distribution \code{scale}
+#' parameter \eqn{\lambda} and \code{mean}
+#' parameter \eqn{\mu}, has density
 #' \deqn{f\left( x\right) =\sqrt{\frac{\lambda }{2\pi }}
 #' \frac{1}{x^{3/2}}e^{-\frac{ \lambda }{2\mu ^{2}x}\left( x-\mu \right) ^{2}},}
 #' where
@@ -51,8 +49,7 @@ duigd<-function(x,mu,lambda=1,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples
@@ -76,8 +73,7 @@ puigd<-function(q,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples
@@ -112,8 +108,7 @@ quigd<-function(p,mu,lambda=1,lower.tail=TRUE)
   }
   return(kok)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples

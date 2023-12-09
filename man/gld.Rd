@@ -6,7 +6,7 @@
 \alias{pgld}
 \alias{qgld}
 \alias{rgld}
-\title{The gamma-Lomax distribution}
+\title{Gamma-Lomax Distribution}
 \usage{
 dgld(x, a, alpha, beta = 1, log = FALSE)
 
@@ -26,7 +26,7 @@ rgld(n, a, alpha, beta = 1)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -43,9 +43,9 @@ Density, distribution function, quantile function and random generation for
 the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
 }
 \details{
-The gamma-Lomax distribution \code{shape} parameters are
-\eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density
-given by
+The Gamma-Lomax distribution \code{shape} parameters
+\eqn{a} and \eqn{\alpha}, and \code{scale} parameter is \eqn{\beta},
+has density
 \deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}
 {\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha
 \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
@@ -55,9 +55,9 @@ where
 \examples{
 library(new.dist)
 dgld(1, a=2, alpha=3, beta=4)
-pgld(1,a=2,alpha=3,beta=4)
-qgld(.8,a=2,alpha=3,beta=4)
-rgld(10,a=2,alpha=3,beta=4)
+pgld(1, a=2,alpha=3,beta=4)
+qgld(.8, a=2,alpha=3,beta=4)
+rgld(10, a=2,alpha=3,beta=4)
 }
 \references{
 Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,

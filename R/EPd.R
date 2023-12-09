@@ -1,4 +1,4 @@
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @name EPd
 #' @param x,q vector of quantiles.
@@ -8,16 +8,16 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' the EP distribution parameters.
+#' the EP distribution.
 #' @return \code{dEPd} gives the density, \code{pEPd} gives the distribution
 #' function, \code{qEPd} gives the quantile function and \code{rEPd} generates
 #' random deviates.
 #' @details
-#' The EP distribution with parameters are \eqn{\lambda}, \eqn{\beta},
-#' has density given by
+#' The EP distribution with parameters \eqn{\lambda} and \eqn{\beta},
+#' has density
 #'  \deqn{f\left( x\right) =\frac{\lambda \beta }
 #' {\left( 1-e^{-\lambda }\right) } e^{-\lambda -\beta x+\lambda e^{-\beta x}},}
 #' where
@@ -46,7 +46,7 @@ dEPd<-function(x,lambda,beta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples
@@ -69,7 +69,7 @@ pEPd<-function(q,lambda,beta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples
@@ -96,7 +96,7 @@ qEPd<-function(p,lambda,beta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples

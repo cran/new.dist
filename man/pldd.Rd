@@ -6,7 +6,7 @@
 \alias{ppldd}
 \alias{qpldd}
 \alias{rpldd}
-\title{A Power Log Dagum Distribution}
+\title{Power Log Dagum Distribution}
 \usage{
 dpldd(x, alpha, beta, theta, log = FALSE)
 
@@ -24,7 +24,7 @@ rpldd(n, alpha, beta, theta)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -38,11 +38,11 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-a Power Log Dagum distribution parameters.
+a Power Log Dagum distribution.
 }
 \details{
-A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta},
-\eqn{\theta}, has density given by
+A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta} and
+\eqn{\theta}, has density
 \deqn{f\left( x\right) =\alpha
  \left( \beta +\theta \left\vert x\right\vert^{\beta -1}
  \right) e^{-\left( \beta x+sign\left( x\right)
@@ -52,7 +52,7 @@ A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta},
    \left\vert x\right\vert ^{\beta }\right) }
    \right) ^{-\left( \alpha +1\right)},}
 where
-\deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0,~\theta \geq 0}
+\deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0~and~\theta \geq 0}
 }
 \note{
 The distributions hazard function

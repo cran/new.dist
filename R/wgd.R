@@ -5,21 +5,21 @@
 #' @param alpha,lambda are parameters.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' the Weighted Geometric distributions parameters.
+#' the Weighted Geometric distribution.
 #' @return \code{dwgd} gives the density, \code{pwgd} gives the distribution
 #' function, \code{qwgd} gives the quantile function and \code{rwgd} generates
 #' random deviates.
 #' @details
 #' The Weighted Geometric distribution with parameters \eqn{\alpha} and
-#' \eqn{\lambda}, has density given by
+#' \eqn{\lambda}, has density
 #' \deqn{f\left( x\right) =\frac{\left( 1-\alpha \right)
 #' \left( 1-\alpha ^{\lambda+1}\right) }{1-\alpha ^{\lambda }}\alpha ^{x-1}
 #' \left( 1-\alpha ^{\lambda x}\right),}
 #' where
-#' \deqn{x\in \mathbb {N} =1,2,...~,~\lambda >0,~0<\alpha <1.}
+#' \deqn{x\in \mathbb {N} =1,2,...~,~\lambda >0~and~0<\alpha <1.}
 #' @references  Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D.,
 #' 2020,
 #' *Weighted bivariate geometric distribution: Simulation and estimation*,

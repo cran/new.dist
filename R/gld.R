@@ -1,4 +1,4 @@
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @name gld
 #' @param x,q vector of quantiles.
@@ -8,7 +8,7 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @param beta a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for
@@ -17,9 +17,9 @@
 #' function, \code{qgld} gives the quantile function and \code{rgld} generates
 #' random deviates.
 #' @details
-#' The gamma-Lomax distribution \code{shape} parameters are
-#' \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density
-#' given by
+#' The Gamma-Lomax distribution \code{shape} parameters
+#' \eqn{a} and \eqn{\alpha}, and \code{scale} parameter is \eqn{\beta},
+#'  has density
 #' \deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}
 #' {\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha
 #' \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
@@ -57,11 +57,11 @@ dgld<-function(x,a,alpha,beta=1,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples
-#' pgld(1,a=2,alpha=3,beta=4)
+#' pgld(1, a=2,alpha=3,beta=4)
 pgld<-function(q,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(a<=0)) {stop("a must be > 0")}
@@ -82,11 +82,11 @@ pgld<-function(q,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples
-#' qgld(.8,a=2,alpha=3,beta=4)
+#' qgld(.8, a=2,alpha=3,beta=4)
 qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
@@ -104,11 +104,11 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
   quant[i]<-VGAM::qlomax(1-exp(-(stats::qgamma(p[i],a[i],1))),beta[i],alpha[i])}
   return(quant)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples
-#' rgld(10,a=2,alpha=3,beta=4)
+#' rgld(10, a=2,alpha=3,beta=4)
 rgld<-function(n,a,alpha,beta=1)
   {
     n<-floor(n)

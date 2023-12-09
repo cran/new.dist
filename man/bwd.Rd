@@ -6,7 +6,7 @@
 \alias{pbwd}
 \alias{qbwd}
 \alias{rbwd}
-\title{A Bimodal Weibull Distribution}
+\title{Bimodal Weibull Distribution}
 \usage{
 dbwd(x, alpha, beta = 1, sigma, log = FALSE)
 
@@ -23,13 +23,13 @@ rbwd(n, alpha, beta = 1, sigma)
 
 \item{beta}{a scale parameter.}
 
-\item{sigma}{the parameter that controls the uni- or bimodality of the
+\item{sigma}{a control parameter that controls the uni- or bimodality of the
 distribution.}
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -43,12 +43,13 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-a Bimodal Weibull Distribution with parameters \code{shape} and \code{scale}.
+a Bimodal Weibull distribution with parameters \code{shape} and \code{scale}.
 }
 \details{
 A Bimodal Weibull distribution with \code{shape} parameter \eqn{\alpha},
-\code{scale} parameter \eqn{\beta} and the parameter that \code{controls} the
-uni- or bimodality of the distribution \eqn{\sigma}, has density given by
+\code{scale} parameter \eqn{\beta},and the \code{control} parameter
+\eqn{\sigma} that determines the uni- or bimodality of the
+distribution, has density
 \deqn{f\left( x\right) =\frac{\alpha }{\beta Z_{\theta }}
 \left[ 1+\left( 1-\sigma~x\right) ^{2}\right] \left( \frac{x}{\beta }
 \right) ^{\alpha -1}\exp \left( -\left( \frac{x}{\beta }\right) ^{\alpha }
@@ -58,7 +59,7 @@ where
 \left( 1+\left( 2/\alpha \right)\right) -2\sigma \beta \Gamma
 \left( 1+\left( 1/\alpha \right) \right) }
 and
-\deqn{x\geq 0,~\alpha ,\beta >0,~\sigma \in\mathbb{R}.}
+\deqn{x\geq 0,~\alpha ,\beta >0~ and ~\sigma \in\mathbb{R}.}
 }
 \examples{
 library(new.dist)

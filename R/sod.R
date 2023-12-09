@@ -1,4 +1,4 @@
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @name sod
 #' @param x,q vector of quantiles.
@@ -8,16 +8,16 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' On parameter estimation of the standard omega distributions parameters.
+#' the Standard Omega distribution.
 #' @return \code{dsod} gives the density, \code{psod} gives the distribution
 #' function, \code{qsod} gives the quantile function and \code{rsod} generates
 #' random deviates.
 #' @details
-#' On parameter estimation of the standard omega distribution with parameters
-#' \eqn{\alpha}, \eqn{\beta}, has density given by
+#' The Standard Omega distribution with parameters
+#' \eqn{\alpha} and \eqn{\beta}, has density
 #' \deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}
 #' \left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
 #' where
@@ -47,7 +47,7 @@ dsod<-function(x,alpha,beta,log=FALSE)
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples
@@ -70,7 +70,7 @@ psod<-function(q,alpha,beta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples
@@ -97,7 +97,7 @@ qsod<-function(p,alpha,beta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples

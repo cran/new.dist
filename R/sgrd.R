@@ -1,4 +1,4 @@
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @name sgrd
 #' @param x,q vector of quantiles.
@@ -10,23 +10,23 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
 #' the Slashed generalized Rayleigh distribution with parameters \code{shape},
-#' \code{scale}, \code{kurtosis}.
+#' \code{scale} and \code{kurtosis}.
 #' @return \code{dsgrd} gives the density, \code{psgrd} gives the distribution
 #' function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates
 #'  random deviates.
 #' @details
-#' The Slashed generalized Rayleigh distribution with \code{shape} parameter
+#' The Slashed Generalized Rayleigh distribution with \code{shape} parameter
 #' \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis}
-#' parameter \eqn{\beta}, has density given by
+#' parameter \eqn{\beta}, has density
 #' \deqn{f\left( x\right) =\frac{\beta x^{-\left( \beta+1\right)}}{\Gamma \left(
 #' \alpha+1\right) \theta ^{\beta/2}}\Gamma \left( \frac{2\alpha +\beta +2}{2}
 #' \right)F\left( \theta x^{2};\frac{2\alpha +\beta +2}{2},1\right), }
 #' where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
-#' \deqn{x>0,~\theta >0,~\alpha >-1,~\beta >0}
+#' \deqn{x>0,~\theta >0,~\alpha >-1~and~\beta >0}
 #' @references  Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
 #' *Slashed generalized Rayleigh distribution*, Communications in Statistics-
 #' Theory and Methods, 46 (10), 4686-4699.
@@ -55,7 +55,7 @@ first and second moment does not exist!"))}
     if(log==TRUE) pdf<-log(pdf)
       return(pdf)
 }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples
@@ -84,7 +84,7 @@ first and second moment does not exist!"))}
     if(log.p==TRUE) integral <- log(integral)
     return(integral)
   }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples
@@ -120,7 +120,7 @@ the first and second moment does not exist!"))}
   })
   return(kok)
 }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples

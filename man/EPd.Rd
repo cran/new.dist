@@ -6,7 +6,7 @@
 \alias{pEPd}
 \alias{qEPd}
 \alias{rEPd}
-\title{The EP distribution}
+\title{EP distribution}
 \usage{
 dEPd(x, lambda, beta, log = FALSE)
 
@@ -24,7 +24,7 @@ rEPd(n, lambda, beta)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -38,11 +38,11 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-the EP distribution parameters.
+the EP distribution.
 }
 \details{
-The EP distribution with parameters are \eqn{\lambda}, \eqn{\beta},
-has density given by
+The EP distribution with parameters \eqn{\lambda} and \eqn{\beta},
+has density
 \deqn{f\left( x\right) =\frac{\lambda \beta }
 {\left( 1-e^{-\lambda }\right) } e^{-\lambda -\beta x+\lambda e^{-\beta x}},}
 where

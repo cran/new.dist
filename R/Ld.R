@@ -1,7 +1,6 @@
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
-#' @name rld
+#' @name Ld
 #' @param x,q vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
@@ -9,18 +8,15 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distributions parameter.
-#' @return \code{drld} gives the density, \code{prld} gives the distribution
-#' function, \code{qrld} gives the quantile function and \code{rrld} generates
+#' the Lindley distribution.
+#' @return \code{dLd} gives the density, \code{pLd} gives the distribution
+#' function, \code{qLd} gives the quantile function and \code{rLd} generates
 #' random deviates.
 #' @details
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution with a parameter \eqn{\theta}, has density
-#' given by
+#' The Lindley distribution with a parameter \eqn{\theta}, has density
 #' \deqn{f\left( x\right) =\frac{\theta ^{2}}{1+\theta }\left( 1+x\right)
 #' e^{-\theta~x},}
 #' where
@@ -31,8 +27,8 @@
 #' simulation, 88 (15), 3018-3032.
 #' @examples
 #' library(new.dist)
-#' drld(1,theta=2)
-drld<-function(x,theta,log=FALSE)
+#' dLd(1,theta=2)
+dLd<-function(x,theta,log=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun <- max(length(x),length(theta))
@@ -47,13 +43,12 @@ drld<-function(x,theta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
-#' @rdname rld
+#' @rdname Ld
 #' @examples
-#' prld(1,theta=2)
-prld<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
+#' pLd(1,theta=2)
+pLd<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun <- max(length(q),length(theta))
@@ -69,13 +64,12 @@ prld<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
-#' @rdname rld
+#' @rdname Ld
 #' @examples
-#' qrld(.8,theta=1)
-qrld<-function(p,theta,lower.tail=TRUE)
+#' qLd(.8,theta=1)
+qLd<-function(p,theta,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
@@ -95,17 +89,16 @@ qrld<-function(p,theta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
-#' @rdname rld
+#' @rdname Ld
 #' @examples
-#' rrld(10,theta=1)
-rrld<-function(n,theta)
+#' rLd(10,theta=1)
+rLd<-function(n,theta)
 {
   n<-floor(n)
   if(any(n<1)) {stop("n must be >= 1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
-  rn<-qrld(stats::runif(n),theta)
+  rn<-qLd(stats::runif(n),theta)
   return(rn)
 }

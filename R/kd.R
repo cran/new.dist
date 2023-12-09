@@ -1,7 +1,6 @@
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
-#' @name epkd
+#' @name kd
 #' @param x,q vector of quantiles.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -9,17 +8,16 @@
 #' @param alpha,lambda are non-negative shape parameters.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' Estimation procedures for kumaraswamy distribution with parameters
-#' \code{shapes}.
-#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution
-#' function, \code{qepkd} gives the quantile function and \code{repkd} generates
+#' Kumaraswamy distribution with \code{shape} parameters.
+#' @return \code{dkd} gives the density, \code{pkd} gives the distribution
+#' function, \code{qkd} gives the quantile function and \code{rkd} generates
 #'  random deviates.
 #' @details
-#' Estimation procedures for kumaraswamy distribution with non-negative shape
-#' parameters \eqn{\alpha}, \eqn{\lambda} has density given by
+#' Kumaraswamy distribution with non-negative shape
+#' parameters \eqn{\alpha} and \eqn{\lambda} has density
 #' \deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }
 #' \right)^{\alpha -1},}
 #' where
@@ -30,8 +28,8 @@
 #' Statistics-Simulation and Computation, 50 (12), 4059-4078.
 #' @examples
 #' library("new.dist")
-#' depkd(0.1,lambda=2,alpha=3)
-depkd<-function(x,lambda,alpha,log=FALSE)
+#' dkd(0.1,lambda=2,alpha=3)
+dkd<-function(x,lambda,alpha,log=FALSE)
 {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(alpha<=0)) {stop("alpha must be > 0")}
@@ -49,13 +47,12 @@ depkd<-function(x,lambda,alpha,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
-#' @rdname epkd
+#' @rdname kd
 #' @examples
-#' pepkd(0.5,lambda=2,alpha=3)
-pepkd<-function(q,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
+#' pkd(0.5,lambda=2,alpha=3)
+pkd<-function(q,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
   {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(alpha<=0)) {stop("alpha must be > 0")}
@@ -72,13 +69,12 @@ pepkd<-function(q,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
     if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
   }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
-#' @rdname epkd
+#' @rdname kd
 #' @examples
-#' qepkd(.8,lambda=2,alpha=3)
-qepkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
+#' qkd(.8,lambda=2,alpha=3)
+qkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
@@ -98,19 +94,18 @@ qepkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
   }
   return(qfonk)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
-#' @rdname epkd
+#' @rdname kd
 #' @examples
-#' repkd(10,lambda=2,alpha=3)
-repkd<-function(n,lambda,alpha)
+#' rkd(10,lambda=2,alpha=3)
+rkd<-function(n,lambda,alpha)
   {
     n<-floor(n)
     if(any(n<1)) {stop("n must be >= 1")}
     if(any(lambda<=0)) {stop("lambda must be > 0")}
     if(any(alpha<=0)) {stop("alpha must be > 0")}
     suppressWarnings({
-    rn<-qepkd(stats::runif(n),lambda,alpha)})
+    rn<-qkd(stats::runif(n),lambda,alpha)})
     return(rn)
   }

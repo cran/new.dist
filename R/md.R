@@ -1,6 +1,6 @@
-#' Estimation in Maxwell distribution with randomly censored data
+#' Maxwell Distribution
 #' @export
-#' @name emd
+#' @name md
 #' @param x,q vector of quantiles.
 #' @param theta a scale parameter.
 #' @param p vector of probabilities.
@@ -8,15 +8,15 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' Estimation in Maxwell distribution with parameter \code{scale}.
-#' @return \code{demd} gives the density, \code{pemd} gives the distribution
-#' function, \code{qemd} gives the quantile function and \code{remd} generates
+#' Maxwell distribution with parameter \code{scale}.
+#' @return \code{dmd} gives the density, \code{pmd} gives the distribution
+#' function, \code{qmd} gives the quantile function and \code{rmd} generates
 #' random deviates.
 #' @details
-#' Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta},
+#' Maxwell distribution with \code{scale} parameter \eqn{\theta},
 #' has density
 #' \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
 #' \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
@@ -27,8 +27,8 @@
 #' statistical computation and simulation, 85 (17), 3560-3578.
 #' @examples
 #' library(new.dist)
-#' demd(1,theta=2)
-demd<-function(x,theta=1,log=FALSE)
+#' dmd(1,theta=2)
+dmd<-function(x,theta=1,log=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun<-max(length(x),length(theta))
@@ -44,10 +44,10 @@ demd<-function(x,theta=1,log=FALSE)
   return(pdf)
 }
 #' @export
-#' @rdname emd
+#' @rdname md
 #' @examples
-#' pemd(1,theta=2)
-pemd<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
+#' pmd(1,theta=2)
+pmd<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun<-max(length(q),length(theta))
@@ -63,10 +63,10 @@ pemd<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
   return(cdf)
 }
 #' @export
-#' @rdname emd
+#' @rdname md
 #' @examples
-#' qemd(.4,theta=5)
-qemd<-function(p,theta=1,lower.tail=TRUE)
+#' qmd(.4,theta=5)
+qmd<-function(p,theta=1,lower.tail=TRUE)
   {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
@@ -93,16 +93,16 @@ qemd<-function(p,theta=1,lower.tail=TRUE)
     return(kok)
   }
 #' @export
-#' @rdname emd
+#' @rdname md
 #' @examples
-#' remd(10,theta=1)
-remd<-function(n,theta=1)
+#' rmd(10,theta=1)
+rmd<-function(n,theta=1)
   {
     n<-floor(n)
     if(any(n<1)) {stop("n must be >= 1")}
     if(any(theta<=0)) {stop("theta must be > 0")}
     suppressWarnings({
-    rn<-qemd(stats::runif(n),theta)
+    rn<-qmd(stats::runif(n),theta)
     return(rn)})
   }
 

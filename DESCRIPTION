@@ -1,6 +1,6 @@
 Package: new.dist
 Title: Alternative Continuous and Discrete Distributions
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c( 
     person("Ramazan", "Akman",,"ramazanakman12345@gmail.com",role=c("cre","ctb"),
         comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
@@ -37,11 +37,11 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-11-06 18:41:02 UTC; Ramazan
+Packaged: 2023-12-09 16:36:08 UTC; Ramazan
 Author: Ramazan Akman [cre, ctb]
     (https://www.researchgate.net/profile/Ramazan-Akman),
   Coşkun Kuş [aut, ctb] (https://www.selcuk.edu.tr/Person/Detail/coskun),
   Ihab Abusaif [aut, ctb]
     (https://www.researchgate.net/profile/Ihab-Abusaif)
 Repository: CRAN
-Date/Publication: 2023-11-07 18:00:02 UTC
+Date/Publication: 2023-12-09 16:50:02 UTC

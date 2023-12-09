@@ -6,7 +6,7 @@
 \alias{psod}
 \alias{qsod}
 \alias{rsod}
-\title{On parameter estimation of the standard omega distribution}
+\title{Standard Omega Distribution}
 \usage{
 dsod(x, alpha, beta, log = FALSE)
 
@@ -24,7 +24,7 @@ rsod(n, alpha, beta)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -38,11 +38,11 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-On parameter estimation of the standard omega distributions parameters.
+the Standard Omega distribution.
 }
 \details{
-On parameter estimation of the standard omega distribution with parameters
-\eqn{\alpha}, \eqn{\beta}, has density given by
+The Standard Omega distribution with parameters
+\eqn{\alpha} and \eqn{\beta}, has density
 \deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}
 \left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
 where

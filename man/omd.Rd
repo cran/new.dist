@@ -6,7 +6,7 @@
 \alias{pomd}
 \alias{qomd}
 \alias{romd}
-\title{on the muth distribution}
+\title{Muth Distribution}
 \usage{
 domd(x, alpha, log = FALSE)
 
@@ -24,7 +24,7 @@ romd(n, alpha)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -38,11 +38,11 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-on the muth distribution distribution parameter.
+on the Muth distribution.
 }
 \details{
-On the muth distribution distribution with a parameter \eqn{\alpha}, has
-density given by
+The Muth distribution with a parameter \eqn{\alpha}, has
+density
 \deqn{f\left( x\right) =\left( e^{\alpha x}-
 \alpha \right) e^{\alpha x-\left(1/\alpha \right) \left( e^{\alpha x}-
 1\right) },}

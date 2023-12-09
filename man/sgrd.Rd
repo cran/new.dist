@@ -6,7 +6,7 @@
 \alias{psgrd}
 \alias{qsgrd}
 \alias{rsgrd}
-\title{Slashed generalized Rayleigh distribution}
+\title{Slashed Generalized Rayleigh Distribution}
 \usage{
 dsgrd(x, theta, alpha, beta, log = FALSE)
 
@@ -28,7 +28,7 @@ rsgrd(n, theta, alpha, beta)
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
 \item{lower.tail}{logical; if TRUE (default), probabilities are
-\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
@@ -43,17 +43,17 @@ random deviates.
 \description{
 Density, distribution function, quantile function and random generation for
 the Slashed generalized Rayleigh distribution with parameters \code{shape},
-\code{scale}, \code{kurtosis}.
+\code{scale} and \code{kurtosis}.
 }
 \details{
-The Slashed generalized Rayleigh distribution with \code{shape} parameter
+The Slashed Generalized Rayleigh distribution with \code{shape} parameter
 \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis}
-parameter \eqn{\beta}, has density given by
+parameter \eqn{\beta}, has density
 \deqn{f\left( x\right) =\frac{\beta x^{-\left( \beta+1\right)}}{\Gamma \left(
 \alpha+1\right) \theta ^{\beta/2}}\Gamma \left( \frac{2\alpha +\beta +2}{2}
 \right)F\left( \theta x^{2};\frac{2\alpha +\beta +2}{2},1\right), }
 where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
-\deqn{x>0,~\theta >0,~\alpha >-1,~\beta >0}
+\deqn{x>0,~\theta >0,~\alpha >-1~and~\beta >0}
 }
 \examples{
 library(new.dist)
